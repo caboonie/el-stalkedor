@@ -9,7 +9,7 @@ def home():
 if __name__ == "__main__":
     app.run()
 
-'''
+
 from bs4 import BeautifulSoup
 import requests
 import re
@@ -18,8 +18,8 @@ import os
 import json
 
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = "a;lfkdsjaflksdj"
+# app = Flask(__name__)
+# app.config['SECRET_KEY'] = "a;lfkdsjaflksdj"
 
 def get_soup(url,header):
     return BeautifulSoup(urllib.request.urlopen(urllib.request.Request(url,headers=header)),'html.parser')
@@ -50,7 +50,7 @@ def get_image(query):
     return images
 
 
-
+'''
 @app.route('/<string:query>', methods = ['GET'])  
 def home_search(query):
     print("searching for ", query)
