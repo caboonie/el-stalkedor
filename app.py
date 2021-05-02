@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, redirect, render_template, Response, send_file, url_for, flash
   
 app = Flask(__name__)
   
@@ -16,7 +16,7 @@ import re
 import urllib.request
 import os
 import json
-from flask import Flask, request, redirect, render_template, Response, send_file, url_for, flash
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "a;lfkdsjaflksdj"
