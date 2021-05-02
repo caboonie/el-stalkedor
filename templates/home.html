@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  images = []
+
+  $("button").click(function(){
+  	console.log("here")
+    $.get("/"+$("#name").val(), function(data, status){
+      images = JSON.parse(data)
+      console.log(images)
+      for (i = 0; i < images.length; i++) {
+      	// style='position: absolute; top: 15px; left:50px;'
+      	// style='animation-delay: "+i.toString()+"s'
+      	var image = $("<img class='fade-in-image' src='"+images[i]+"'></img>").text("");
+
+      	$("#image-holder").append(image)
+      	image.width(350)
+      	// image.height(image.height()*2)
+      	// console.log(image)
+	  }
+    });
+  });
+});
+</script>
+
+<style type="text/css">
+body{
+	background: black;
+	color: white;
+	font-size: 30px;
+}
+
+img {
+	margin: 10px;
+}
+
+.fade-in-image {
+  animation: fadeIn 3s;
+
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+</style>
+
+<body>
+
+	<div class="w3-container w3-center w3-animate-opacity">
+	  <h1 style="font-size: 40px;">lo que saben</h1>
+	  <p>dime tu nombre:</p>
+	  <input type="text" id="name">
+	  <button>Ver</button>
+	</div>
+
+	<div id="image-holder" class="w3-container w3-center" style="position: relative; margin-top: 20px;">
+	</div>
+
+</body>
+</html> 
