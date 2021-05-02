@@ -50,12 +50,8 @@ def get_image(query):
     return images
 
 
-'''
+
 @app.route('/<string:query>', methods = ['GET'])  
 def home_search(query):
     print("searching for ", query)
     return json.dumps(get_image(query))
-
-if __name__ == '__main__':
-    app.run(host= '0.0.0.0', debug=True)
-'''
