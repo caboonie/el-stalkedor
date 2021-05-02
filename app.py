@@ -39,7 +39,8 @@ def get_image(query):
 
 @app.route('/', methods = ['GET'])  
 def home():
-    return render_template("home.html")
+    return "hello"
+    # return render_template("home.html")
 
 @app.route('/<string:query>', methods = ['GET'])  
 def home_search(query):
